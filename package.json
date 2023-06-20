@@ -1,0 +1,65 @@
+{
+  "name": "id-card-service",
+  "productName": "ID Card",
+  "description": "ID Card Application Description",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "bin": "dist/server.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "buildServer": "webpack",
+    "startServer": "node ./bin/server.js",
+    "buildPkg": "pkg ./",
+    "pm2Status":"pm2 status",
+    "pm2Log":"pm2 log",
+    "pm2DeleteAll":"pm2 delete all"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "18.16.0",
+    "npm": "8.19.4"
+  },
+  "keywords": [],
+  "author": {
+    "name": "n-devs",
+    "email": "n.devs260340@gmail.com"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.18.2",
+    "hex2imagebase64": "^1.0.0",
+    "legacy-encoding": "^3.0.0",
+    "pm2": "^5.3.0",
+    "smartcard": "^1.0.46",
+    "socket.io": "4.6.1"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules"
+    ],
+    "targets": [
+      "node18"
+    ],
+    "outputPath": "src/bin"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.2.1",
+    "@electron-forge/maker-deb": "^6.2.1",
+    "@electron-forge/maker-dmg": "^6.2.1",
+    "@electron-forge/maker-rpm": "^6.2.1",
+    "@electron-forge/maker-squirrel": "^6.2.1",
+    "@electron-forge/maker-wix": "^6.2.1",
+    "@electron-forge/maker-zip": "^6.2.1",
+    "@electron-forge/plugin-auto-unpack-natives": "^6.2.1",
+    "electron": "25.1.1",
+    "pkg": "^5.8.1",
+    "webpack": "^5.87.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
