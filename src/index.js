@@ -33,9 +33,10 @@ const createWindow = () => {
   mainWindow.loadFile(path.join(__dirname, "index.html"));
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
-  mainWindow.webContents.ipc.on("update-status", (_event, status) => {
+  mainWindow.webContents.openDevTools();
+  mainWindow.webContents.ipc.on("update-status", (_event, status,path) => {
     if (status) {
+      configProcess.script = path;
       pm2.start(configProcess, function (err, apps) {
         if (err) {
           console.error(err);
